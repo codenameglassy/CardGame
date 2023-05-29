@@ -51,5 +51,6 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  - {fileID: 0}
   currentSlotToSpawn: {fileID: 0}
   hasGameStarted: 0

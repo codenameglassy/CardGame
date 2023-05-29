@@ -91,10 +91,15 @@ public class GameManager : MonoBehaviour
 
                 break;
             case 4:
+                currentSlotToSpawn = slotList[4];
+                slotIndex = 5;
+                break;
+            case 5:
                 currentSlotToSpawn = slotList[3];
                 slotIndex = 1;
-
                 break;
+                
+           
         }
     }
 

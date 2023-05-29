@@ -12,28 +12,20 @@ public class MovesTracker : MonoBehaviour
     private void Start()
     {
         movesLeft = totalMoves;
-        UpdateMovesText();
-       
+        movesText.text = movesLeft.ToString();
+
     }
 
     public void DeductMove()
     {
         movesLeft--;
-        UpdateMovesText();
-
-        
-    }
-
-    private void UpdateMovesText()
-    {
         movesText.text = movesLeft.ToString();
         if (movesLeft <= 0)
         {
-
-            GameOverView.SetActive(true);
-            // Perform necessary actions when moves run out
             Debug.Log("No more moves left!");
+            GameOverView.SetActive(true);
 
         }
     }
+
 }

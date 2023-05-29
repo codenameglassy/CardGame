@@ -138,10 +138,10 @@ public class Slot : MonoBehaviour
         int count = stackedCards.Count;
         if (count >= 3)
         {
-           
+
             for (int i = count - 1; i >= 2; i--)
             {
-                if(!stackedCards[i - 1].GetComponent<CardBase>().IsFaceUp)
+                if (!stackedCards[i - 1].GetComponent<CardBase>().IsFaceUp)
                 {
                     return;
                 }
@@ -152,7 +152,9 @@ public class Slot : MonoBehaviour
                 }
 
                 if (stackedCards[i].GetComponent<CardBase>().Value == stackedCards[i - 1].GetComponent<CardBase>().Value &&
-                    stackedCards[i].GetComponent<CardBase>().Value == stackedCards[i - 2].GetComponent<CardBase>().Value)
+                    stackedCards[i].GetComponent<CardBase>().Value == stackedCards[i - 2].GetComponent<CardBase>().Value
+                    && stackedCards[i].GetComponent<CardBase>().Type == stackedCards[i - 1].GetComponent<CardBase>().Type &&
+                    stackedCards[i].GetComponent<CardBase>().Type == stackedCards[i - 2].GetComponent<CardBase>().Type) 
                 {
                     Destroy(stackedCards[i].gameObject);
                     Destroy(stackedCards[i - 1].gameObject);
@@ -162,7 +164,7 @@ public class Slot : MonoBehaviour
                     stackedCards.RemoveAt(i - 1);
                     stackedCards.RemoveAt(i - 2);
                     FindObjectOfType<AudioManagerCS>().Play("Cards Destroy");
-                    
+
                     ScoreManager.instance.AddScore(10);
                     FindObjectOfType<GameoverViewManager>().AddScore(10);
                     break;
