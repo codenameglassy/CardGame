@@ -11,6 +11,7 @@ public class PageManager : MonoBehaviour
     {
         ThisPage.SetActive(false);
         NextPage.SetActive(true);
+        FindObjectOfType<AudioManagerCS>().Play("Card Touch");
     }
 
     // Update is called once per frame
