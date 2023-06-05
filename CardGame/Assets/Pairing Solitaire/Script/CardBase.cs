@@ -6,7 +6,7 @@ public class CardBase : MonoBehaviour
 {
     public CardType Type;
     [HideInInspector]public int Value;
-
+    public GameObject selectedSprite;
    
     public bool IsFaceUp { get; private set; }
     // Enum to represent the card types

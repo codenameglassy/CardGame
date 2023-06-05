@@ -133,9 +133,11 @@ public class Slot : MonoBehaviour
         // Update the sorting order based on the card's position in the stack
         int sortingOrder = startingSortingOrder + (sortingOrderIncrement * cardIndex);
         SpriteRenderer spriteRenderer = card.GetComponent<SpriteRenderer>();
+        SpriteRenderer selectedSpriteSpriteRenderer = card.selectedSprite.GetComponent<SpriteRenderer>();
         if (spriteRenderer != null)
         {
             spriteRenderer.sortingOrder = sortingOrder;
+            selectedSpriteSpriteRenderer.sortingOrder = sortingOrder;
         }
     }
 

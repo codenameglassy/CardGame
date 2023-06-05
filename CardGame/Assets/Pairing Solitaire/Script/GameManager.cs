@@ -42,6 +42,13 @@ public class GameManager : MonoBehaviour
             {
                 if (hit_.collider.CompareTag("Slot"))
                 {
+
+                    if(selectedCardSlot == hit_.collider.GetComponent<Slot>())
+                    {
+                        Debug.Log("Same slot");
+                        return;
+                    }
+                   
                     if(selectedCard == null)
                     {
                         Slot hitSlot = hit_.collider.GetComponent<Slot>();
@@ -53,6 +60,7 @@ public class GameManager : MonoBehaviour
                         hitSlot.GetlastCard();
                         Debug.Log(hitSlot.gameObject.name);
                         selectedCard.GetComponent<SpriteRenderer>().color = Color.yellow;
+                        //selectedCard.selectedSprite.SetActive(true);
                         selectedCardSlot = hitSlot;
                         
                     }
@@ -62,6 +70,8 @@ public class GameManager : MonoBehaviour
                         selectedCard.MoveCard(selectedCardSlot, targetSlot);
                         FindObjectOfType<AudioManagerCS>().Play("Card Transfer");
                         selectedCard.GetComponent<SpriteRenderer>().color = Color.white;
+                        //selectedCard.selectedSprite.SetActive(false);
+
                         //clear
                         selectedCard = null;
                         selectedCardSlot = null;
