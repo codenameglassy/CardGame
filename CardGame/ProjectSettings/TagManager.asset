@@ -45,3 +45,6 @@ TagManager:
   - name: Card
     uniqueID: 2411339053
     locked: 0
+  - name: VFX
+    uniqueID: 3500719533
+    locked: 0

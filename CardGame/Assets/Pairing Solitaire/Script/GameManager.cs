@@ -32,7 +32,8 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-        
+       
+
         if (Input.GetMouseButtonDown(0))
         {
             Vector3 mousePosition = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, -10));
@@ -106,11 +107,41 @@ public class GameManager : MonoBehaviour
    public void GameStarter()
     {
        hasGameStarted = true;
+        if (Settings.myGameMode == Settings.gamemode.versionTwo)
+        {
+            FaceUpAllCards();
+        }
     }
     
    public void DelayStartGame()
     {
         Invoke("GameStarter", 6f);
+      
+    }
+
+
+    public void FaceUpAllCards()
+    {
+        CardBase[] cards = FindObjectsOfType<CardBase>();
+        // Create a list to store the objects
+        List<CardBase> cardList = new List<CardBase>();
+        cardList.AddRange(cards);
+
+        Slot[] slots = FindObjectsOfType<Slot>();
+        List<Slot> slotList = new List<Slot>();
+        slotList.AddRange(slots);
+
+
+        for (int i = 0; i < cards.Length; i++)
+        {
+            cards[i].FlipFaceUp();
+
+            /*for (int j = 0; j < slots.Length; j++)
+            {
+                slots[i].DestroyConsecutiveDuplicateCards();
+                slots[i].DestroyConsecutiveSequentialCards();
+            }*/
+        }
     }
 
    

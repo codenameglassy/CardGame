@@ -13,6 +13,12 @@ public class Gamestarter : MonoBehaviour
     }
     public void VersionOne()
     {
-        GameManager.instance.DelayStartGame();
+        Settings.myGameMode = Settings.gamemode.versionOne;
+    }
+
+    public void VersionTwo()
+    {
+        Settings.myGameMode = Settings.gamemode.versionTwo;
+
     }
 }

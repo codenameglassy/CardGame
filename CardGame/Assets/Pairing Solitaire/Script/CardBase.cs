@@ -50,7 +50,7 @@ public class CardBase : MonoBehaviour
         yield return new WaitForEndOfFrame();
         GameManager.instance.SelectRandomSlot();
 
-        GameManager.instance.currentSlotToSpawn.AddCardToStack(this);
+        GameManager.instance.currentSlotToSpawn.AddCardToStack(this, GameManager.instance.currentSlotToSpawn.transform);
         ShowCard();
 
         yield return new WaitForEndOfFrame();
@@ -140,7 +140,16 @@ public class CardBase : MonoBehaviour
             return;
         }
         mySlot.RemoveCardFromStack(this);
-        targetSlot.AddCardToStack(this);
+
+        if(targetSlot.stackedCards.Count == 0)
+        {
+            targetSlot.AddCardToStack(this, targetSlot.transform);
+
+        }
+        else
+        {
+            targetSlot.AddCardToStack(this, targetSlot.GetLastCardPosition());
+        }
         FindObjectOfType<MovesTracker>().DeductMove();
     }
 

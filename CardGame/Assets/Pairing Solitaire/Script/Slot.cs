@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
 
 public class Slot : MonoBehaviour
 {
@@ -72,23 +73,34 @@ public class Slot : MonoBehaviour
         return true; // All slots are empty
     }
 
-    public void AddCardToStack(CardBase card)
+    public void AddCardToStack(CardBase card, Transform lastCardPos)
     {
-       
+        StartCoroutine(EnumAddCardToStack(card, lastCardPos));
+      
+    }
+
+    IEnumerator EnumAddCardToStack(CardBase card, Transform lastCardPos)
+    {
+        yield return new WaitForEndOfFrame();
+
         // Add the card to the stacked cards list
         stackedCards.Add(card);
 
+        card.transform.DOMove(lastCardPos.position, .25f);
+
+        yield return new WaitForSeconds(0.25f);
         // Update the card's position in the stack
         UpdateCardPosition(card);
 
         if (!card.IsFaceUp)
         {
-            return;
+            yield break;
         }
 
-
+        yield return new WaitForSeconds(0.1f);
         DestroyConsecutiveDuplicateCards();
         DestroyConsecutiveSequentialCards();
+
     }
 
     public void RemoveCardFromStack(CardBase card)
@@ -130,10 +142,21 @@ public class Slot : MonoBehaviour
     public void GetlastCard()
     {
         int last = stackedCards.Count - 1;
+        if (!stackedCards[last].IsFaceUp)
+        {
+            return;
+        }
         stackedCards[last].SelectCard();
     }
 
-    private void DestroyConsecutiveDuplicateCards()
+    public Transform GetLastCardPosition()
+    {
+        int last = stackedCards.Count - 1;
+        Debug.Log(stackedCards[last].gameObject.name);
+        return stackedCards[last].transform;
+    }
+
+    public void DestroyConsecutiveDuplicateCards()
     {
         int count = stackedCards.Count;
         if (count >= 3)
@@ -150,11 +173,11 @@ public class Slot : MonoBehaviour
                 {
                     return;
                 }
-
+                
                 if (stackedCards[i].GetComponent<CardBase>().Value == stackedCards[i - 1].GetComponent<CardBase>().Value &&
-                    stackedCards[i].GetComponent<CardBase>().Value == stackedCards[i - 2].GetComponent<CardBase>().Value
-                    && stackedCards[i].GetComponent<CardBase>().Type == stackedCards[i - 1].GetComponent<CardBase>().Type &&
-                    stackedCards[i].GetComponent<CardBase>().Type == stackedCards[i - 2].GetComponent<CardBase>().Type) 
+                 stackedCards[i].GetComponent<CardBase>().Value == stackedCards[i - 2].GetComponent<CardBase>().Value
+                 && stackedCards[i].GetComponent<CardBase>().Type == stackedCards[i - 1].GetComponent<CardBase>().Type &&
+                  stackedCards[i].GetComponent<CardBase>().Type == stackedCards[i - 2].GetComponent<CardBase>().Type)
                 {
                     Destroy(stackedCards[i].gameObject);
                     Destroy(stackedCards[i - 1].gameObject);
@@ -167,14 +190,44 @@ public class Slot : MonoBehaviour
 
                     ScoreManager.instance.AddScore(10);
                     FindObjectOfType<GameoverViewManager>().AddScore(10);
+
+                    foreach (CardBase stackedCard in stackedCards)
+                    {
+                        UpdateCardPosition(stackedCard);
+                    }
                     break;
+
+                }
+                else if (stackedCards[i].GetComponent<CardBase>().Value == stackedCards[i - 1].GetComponent<CardBase>().Value &&
+                    stackedCards[i].GetComponent<CardBase>().Value == stackedCards[i - 2].GetComponent<CardBase>().Value)
+                {
+                    Destroy(stackedCards[i].gameObject);
+                    Destroy(stackedCards[i - 1].gameObject);
+                    Destroy(stackedCards[i - 2].gameObject);
+                    stackedCards.RemoveAt(i);
+                    Instantiate(CardEffect, stackedCards[i - 2].gameObject.transform.position, Quaternion.identity);
+                    stackedCards.RemoveAt(i - 1);
+                    stackedCards.RemoveAt(i - 2);
+                    FindObjectOfType<AudioManagerCS>().Play("Cards Destroy");
+
+                    ScoreManager.instance.AddScore(5);
+                    FindObjectOfType<GameoverViewManager>().AddScore(5);
+                    foreach (CardBase stackedCard in stackedCards)
+                    {
+                        UpdateCardPosition(stackedCard);
+                    }
+                    break;
+
+                  
                 }
             }
         }
+
+
     }
 
 
-    private void DestroyConsecutiveSequentialCards()
+    public void DestroyConsecutiveSequentialCards()
     {
         int count = stackedCards.Count;
         if (count >= 3)
@@ -208,7 +261,13 @@ public class Slot : MonoBehaviour
                     Instantiate(CardEffect, transform.position, Quaternion.identity);
                     ScoreManager.instance.AddScore(10);
                     FindObjectOfType<GameoverViewManager>().AddScore(10);
+                    foreach (CardBase stackedCard in stackedCards)
+                    {
+                        UpdateCardPosition(stackedCard);
+                    }
                     break;
+
+                   
                 }
             }
         }
