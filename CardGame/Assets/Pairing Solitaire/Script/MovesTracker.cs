@@ -4,7 +4,7 @@ using TMPro;
 
 public class MovesTracker : MonoBehaviour
 {
-    public int totalMoves = 26; // Total number of moves allowed
+    public int totalMoves = 36; // Total number of moves allowed
     public TextMeshProUGUI movesText; // Reference to the UI Text component displaying moves left
 
     private int movesLeft; // Current number of moves left

@@ -27,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 8286135186507802195}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.60001, y: -2.40004, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.3, y: 1.3, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -99,7 +99,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Type: 0
   Value: 11
-  startingSlot: {fileID: 0}
   cardValue: 0
   cardSpritesHeart:
   - {fileID: 862654619, guid: 8bb2f91d1c3129240a3c25a40c8afde7, type: 3}
@@ -117,3 +116,4 @@ MonoBehaviour:
   - {fileID: -995328445, guid: 8bb2f91d1c3129240a3c25a40c8afde7, type: 3}
   - {fileID: 1575515538, guid: 8bb2f91d1c3129240a3c25a40c8afde7, type: 3}
   - {fileID: 1338520714, guid: 8bb2f91d1c3129240a3c25a40c8afde7, type: 3}
+  faceDown: {fileID: 0}
