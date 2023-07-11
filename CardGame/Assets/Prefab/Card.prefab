@@ -26,11 +26,11 @@ Transform:
   m_GameObject: {fileID: 4282481796482936148}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.3, y: 1.9, z: 1}
+  m_LocalScale: {x: 0.25, y: 0.25, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8286135186507802196}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &4591522869962792087
 SpriteRenderer:
@@ -52,7 +52,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 10301, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -72,9 +72,9 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1883628243
   m_SortingLayer: 1
-  m_SortingOrder: -1
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 1, g: 0.8228265, b: 0, a: 1}
+  m_SortingOrder: 1
+  m_Sprite: {fileID: 21300000, guid: dc8778121159dfb4f974df1d91dbeeb2, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -84,7 +84,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &8286135186507802195
+--- !u!1 &4885132984755536233
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -92,39 +92,37 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 8286135186507802196}
-  - component: {fileID: 8286135186507802197}
-  - component: {fileID: 8286135186507802194}
+  - component: {fileID: 1398786732779236460}
+  - component: {fileID: 5463441896321738223}
   m_Layer: 0
-  m_Name: Card
+  m_Name: Heart-J
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &8286135186507802196
+--- !u!4 &1398786732779236460
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8286135186507802195}
+  m_GameObject: {fileID: 4885132984755536233}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.60001, y: -2.40004, z: 0}
-  m_LocalScale: {x: 1.4, y: 1.4, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.22, y: 0.22, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 6801185694965972899}
-  m_Father: {fileID: 0}
+  m_Children: []
+  m_Father: {fileID: 8286135186507802196}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &8286135186507802197
+--- !u!212 &5463441896321738223
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8286135186507802195}
+  m_GameObject: {fileID: 4885132984755536233}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -159,17 +157,51 @@ SpriteRenderer:
   m_SortingLayerID: -1883628243
   m_SortingLayer: 1
   m_SortingOrder: 0
-  m_Sprite: {fileID: 1097178660, guid: 8bb2f91d1c3129240a3c25a40c8afde7, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 02e150c15d655f34d9558af1ef185402, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1.1875, y: 1.8125}
+  m_Size: {x: 10.42, y: 14.58}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &8286135186507802195
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8286135186507802196}
+  - component: {fileID: 8286135186507802194}
+  m_Layer: 0
+  m_Name: Card
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8286135186507802196
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8286135186507802195}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1398786732779236460}
+  - {fileID: 6801185694965972899}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &8286135186507802194
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -187,19 +219,20 @@ MonoBehaviour:
   selectedSprite: {fileID: 4282481796482936148}
   cardValue: 0
   cardSpritesHeart:
-  - {fileID: 862654619, guid: 8bb2f91d1c3129240a3c25a40c8afde7, type: 3}
-  - {fileID: -907609274, guid: 8bb2f91d1c3129240a3c25a40c8afde7, type: 3}
-  - {fileID: 1678063655, guid: 8bb2f91d1c3129240a3c25a40c8afde7, type: 3}
+  - {fileID: 21300000, guid: dd3cb63f7af5384488d15aeee1695925, type: 3}
+  - {fileID: 21300000, guid: 759504348030b0941b1b3f92a7528943, type: 3}
+  - {fileID: 21300000, guid: 49e356e066b1d58409b3265f1e469a12, type: 3}
   cardSpritesDiamond:
-  - {fileID: -760374006, guid: 8bb2f91d1c3129240a3c25a40c8afde7, type: 3}
-  - {fileID: -1225603458, guid: 8bb2f91d1c3129240a3c25a40c8afde7, type: 3}
-  - {fileID: 1614191399, guid: 8bb2f91d1c3129240a3c25a40c8afde7, type: 3}
+  - {fileID: 21300000, guid: b7ffc36499054cc479352bb9be00782e, type: 3}
+  - {fileID: 21300000, guid: c97832e1890ba8a4280a04ef316877a5, type: 3}
+  - {fileID: 21300000, guid: b3c3b8fee92380744bb23eb4a2cc996b, type: 3}
   cardSpritesSpade:
-  - {fileID: 1817343753, guid: 8bb2f91d1c3129240a3c25a40c8afde7, type: 3}
-  - {fileID: 1205208927, guid: 8bb2f91d1c3129240a3c25a40c8afde7, type: 3}
-  - {fileID: -690071221, guid: 8bb2f91d1c3129240a3c25a40c8afde7, type: 3}
+  - {fileID: 21300000, guid: c89d3361cd0ba1e4585593c06c2282d1, type: 3}
+  - {fileID: 21300000, guid: d99db7035302b84408f10e5150c56f0b, type: 3}
+  - {fileID: 21300000, guid: a0352902b587adb45a7b82ecbb41c91a, type: 3}
   cardSpritesClub:
-  - {fileID: -995328445, guid: 8bb2f91d1c3129240a3c25a40c8afde7, type: 3}
-  - {fileID: 1575515538, guid: 8bb2f91d1c3129240a3c25a40c8afde7, type: 3}
-  - {fileID: 1338520714, guid: 8bb2f91d1c3129240a3c25a40c8afde7, type: 3}
-  faceDown: {fileID: 0}
+  - {fileID: 21300000, guid: d31ac1b8048f12f4fbe2cbe21df0c2f5, type: 3}
+  - {fileID: 21300000, guid: 4bb029f7acaef4b498c05d3750775743, type: 3}
+  - {fileID: 21300000, guid: 984b9ca41c4059f47888500ccfa8ad30, type: 3}
+  faceDown: {fileID: 21300000, guid: 9e7b093fa9424274393f7df96cf4b309, type: 3}
+  spriteRenderer: {fileID: 5463441896321738223}

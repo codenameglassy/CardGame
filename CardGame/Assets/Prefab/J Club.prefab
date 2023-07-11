@@ -7,6 +7,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4282481796482936148, guid: 9ff7cc25ec9ed2244a38fb7e6e9a8b39, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6801185694965972899, guid: 9ff7cc25ec9ed2244a38fb7e6e9a8b39, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.26
+      objectReference: {fileID: 0}
+    - target: {fileID: 6801185694965972899, guid: 9ff7cc25ec9ed2244a38fb7e6e9a8b39, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.26
+      objectReference: {fileID: 0}
     - target: {fileID: 8286135186507802194, guid: 9ff7cc25ec9ed2244a38fb7e6e9a8b39, type: 3}
       propertyPath: Type
       value: 3
@@ -14,7 +26,7 @@ PrefabInstance:
     - target: {fileID: 8286135186507802194, guid: 9ff7cc25ec9ed2244a38fb7e6e9a8b39, type: 3}
       propertyPath: faceDown
       value: 
-      objectReference: {fileID: 2008635439, guid: 8bb2f91d1c3129240a3c25a40c8afde7, type: 3}
+      objectReference: {fileID: 21300000, guid: 9e7b093fa9424274393f7df96cf4b309, type: 3}
     - target: {fileID: 8286135186507802195, guid: 9ff7cc25ec9ed2244a38fb7e6e9a8b39, type: 3}
       propertyPath: m_Name
       value: J Club

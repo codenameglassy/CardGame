@@ -8,7 +8,7 @@ public class howToPlay : MonoBehaviour
 
     private void Start()
     {
-        htpImage.SetActive(false);
+      //  htpImage.SetActive(false);
     }
 
     bool toggle;
@@ -24,5 +24,10 @@ public class howToPlay : MonoBehaviour
         {
             htpImage.SetActive(false);
         }
+    }
+
+    public void HtpPageState(bool state)
+    {
+        htpImage.SetActive(state);
     }
 }

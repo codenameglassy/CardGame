@@ -4,28 +4,59 @@ using UnityEngine;
 
 public class SpawnManager : MonoBehaviour
 {
-    public List<GameObject> spawnableItems = new List<GameObject>();
+    private List<GameObject> spawnableItems = new List<GameObject>();
+    public int numberOfCardsToSpawn;
+    public float spawnDelay;
+
+    private void Awake()
+    {
+        
+    }
 
     private void Start()
     {
-        StartCoroutine(SpawnItemsWithDelay(36, 0.15f));
+        Invoke("SpawnCads", 1f);
+    }
+
+    private void FixedUpdate()
+    {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            FindObjectOfType<SceneLoader>().LoadScene("NewMainMenu");
+        }
+
+    }
+
+    void SpawnCads()
+    {
+        numberOfCardsToSpawn = LevelData.instance.myGoalData.numberOfCardsToSpawn;
+        spawnableItems.AddRange(LevelData.instance.myGoalData.spawnableItems);
+        StartCoroutine(SpawnItemsWithDelay(numberOfCardsToSpawn, spawnDelay));
     }
 
     IEnumerator SpawnItemsWithDelay(int spawnCount, float delay)
     {
+        int spawnedCount = 0;
         for (int i = 0; i < spawnCount; i++)
         {
             SpawnRandomItem();
-
+            spawnedCount++;
             yield return new WaitForSeconds(delay);
 
-            if ( spawnCount==0)
+            if (spawnedCount >= spawnCount)
             {
-                GameManager.instance.hasGameStarted = true;
+                Invoke("StartGame", 1f);
             }
         }
 
  
+    }
+
+    public void StartGame()
+    {
+        GameManager.instance.hasGameStarted = true;
+        GameManager.instance.GameStarter();
+        Debug.Log("Game has started");
     }
 
     void SpawnRandomItem()

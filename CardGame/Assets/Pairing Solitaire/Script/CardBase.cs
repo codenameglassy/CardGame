@@ -32,11 +32,11 @@ public class CardBase : MonoBehaviour
     public Sprite faceDown;
     int cardValueIndex;
 
-    private SpriteRenderer spriteRenderer;
+    public SpriteRenderer spriteRenderer;
 
     private void Awake()
     {
-        spriteRenderer = GetComponent<SpriteRenderer>();
+        //spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     private void Start()
@@ -170,4 +170,181 @@ public class CardBase : MonoBehaviour
         // Disable card functionality here
     }
    
+    public void DestroyMyCard()
+    {
+        switch (cardValue) 
+        {
+            case CardValue.k:
+                switch (Type)
+                {
+                    case CardType.Heart:
+                        for (int i = 0; i < MovesTracker.instance.goalCardsScriptList.Count; i++)
+                        {
+                            if(MovesTracker.instance.goalCardsScriptList[i].myCardType == GoalCard.CardType.K)
+                            {
+                                if(MovesTracker.instance.goalCardsScriptList[i].myCardSubType == GoalCard.CardSubType.Heart)
+                                {
+                                    MovesTracker.instance.goalCardsScriptList[i].DeductCardGoalNumber();
+                                }
+                            }
+                        }
+
+                        break;
+                    case CardType.Club:
+                        for (int i = 0; i < MovesTracker.instance.goalCardsScriptList.Count; i++)
+                        {
+                            if (MovesTracker.instance.goalCardsScriptList[i].myCardType == GoalCard.CardType.K)
+                            {
+                                if (MovesTracker.instance.goalCardsScriptList[i].myCardSubType == GoalCard.CardSubType.Club)
+                                {
+                                    MovesTracker.instance.goalCardsScriptList[i].DeductCardGoalNumber();
+                                }
+                            }
+                        }
+
+                        break;
+                    case CardType.Diamond:
+                        for (int i = 0; i < MovesTracker.instance.goalCardsScriptList.Count; i++)
+                        {
+                            if (MovesTracker.instance.goalCardsScriptList[i].myCardType == GoalCard.CardType.K)
+                            {
+                                if (MovesTracker.instance.goalCardsScriptList[i].myCardSubType == GoalCard.CardSubType.Diamond)
+                                {
+                                    MovesTracker.instance.goalCardsScriptList[i].DeductCardGoalNumber();
+                                }
+                            }
+                        }
+
+                        break;
+                    case CardType.Spade:
+                        for (int i = 0; i < MovesTracker.instance.goalCardsScriptList.Count; i++)
+                        {
+                            if (MovesTracker.instance.goalCardsScriptList[i].myCardType == GoalCard.CardType.K)
+                            {
+                                if (MovesTracker.instance.goalCardsScriptList[i].myCardSubType == GoalCard.CardSubType.Spade)
+                                {
+                                    MovesTracker.instance.goalCardsScriptList[i].DeductCardGoalNumber();
+                                }
+                            }
+                        }
+
+                        break;
+                }
+                break;
+            case CardValue.Q:
+                switch (Type)
+                {
+                    case CardType.Heart:
+                        for (int i = 0; i < MovesTracker.instance.goalCardsScriptList.Count; i++)
+                        {
+                            if (MovesTracker.instance.goalCardsScriptList[i].myCardType == GoalCard.CardType.Q)
+                            {
+                                if (MovesTracker.instance.goalCardsScriptList[i].myCardSubType == GoalCard.CardSubType.Heart)
+                                {
+                                    MovesTracker.instance.goalCardsScriptList[i].DeductCardGoalNumber();
+                                }
+                            }
+                        }
+
+                        break;
+                    case CardType.Club:
+                        for (int i = 0; i < MovesTracker.instance.goalCardsScriptList.Count; i++)
+                        {
+                            if (MovesTracker.instance.goalCardsScriptList[i].myCardType == GoalCard.CardType.Q)
+                            {
+                                if (MovesTracker.instance.goalCardsScriptList[i].myCardSubType == GoalCard.CardSubType.Club)
+                                {
+                                    MovesTracker.instance.goalCardsScriptList[i].DeductCardGoalNumber();
+                                }
+                            }
+                        }
+
+                        break;
+                    case CardType.Diamond:
+                        for (int i = 0; i < MovesTracker.instance.goalCardsScriptList.Count; i++)
+                        {
+                            if (MovesTracker.instance.goalCardsScriptList[i].myCardType == GoalCard.CardType.Q)
+                            {
+                                if (MovesTracker.instance.goalCardsScriptList[i].myCardSubType == GoalCard.CardSubType.Diamond)
+                                {
+                                    MovesTracker.instance.goalCardsScriptList[i].DeductCardGoalNumber();
+                                }
+                            }
+                        }
+
+                        break;
+                    case CardType.Spade:
+                        for (int i = 0; i < MovesTracker.instance.goalCardsScriptList.Count; i++)
+                        {
+                            if (MovesTracker.instance.goalCardsScriptList[i].myCardType == GoalCard.CardType.Q)
+                            {
+                                if (MovesTracker.instance.goalCardsScriptList[i].myCardSubType == GoalCard.CardSubType.Spade)
+                                {
+                                    MovesTracker.instance.goalCardsScriptList[i].DeductCardGoalNumber();
+                                }
+                            }
+                        }
+
+                        break;
+                }
+                break;
+            case CardValue.J:
+                switch (Type)
+                {
+                    case CardType.Heart:
+                        for (int i = 0; i < MovesTracker.instance.goalCardsScriptList.Count; i++)
+                        {
+                            if (MovesTracker.instance.goalCardsScriptList[i].myCardType == GoalCard.CardType.J)
+                            {
+                                if (MovesTracker.instance.goalCardsScriptList[i].myCardSubType == GoalCard.CardSubType.Heart)
+                                {
+                                    MovesTracker.instance.goalCardsScriptList[i].DeductCardGoalNumber();
+                                }
+                            }
+                        }
+
+                        break;
+                    case CardType.Club:
+                        for (int i = 0; i < MovesTracker.instance.goalCardsScriptList.Count; i++)
+                        {
+                            if (MovesTracker.instance.goalCardsScriptList[i].myCardType == GoalCard.CardType.J)
+                            {
+                                if (MovesTracker.instance.goalCardsScriptList[i].myCardSubType == GoalCard.CardSubType.Club)
+                                {
+                                    MovesTracker.instance.goalCardsScriptList[i].DeductCardGoalNumber();
+                                }
+                            }
+                        }
+
+                        break;
+                    case CardType.Diamond:
+                        for (int i = 0; i < MovesTracker.instance.goalCardsScriptList.Count; i++)
+                        {
+                            if (MovesTracker.instance.goalCardsScriptList[i].myCardType == GoalCard.CardType.J)
+                            {
+                                if (MovesTracker.instance.goalCardsScriptList[i].myCardSubType == GoalCard.CardSubType.Diamond)
+                                {
+                                    MovesTracker.instance.goalCardsScriptList[i].DeductCardGoalNumber();
+                                }
+                            }
+                        }
+
+                        break;
+                    case CardType.Spade:
+                        for (int i = 0; i < MovesTracker.instance.goalCardsScriptList.Count; i++)
+                        {
+                            if (MovesTracker.instance.goalCardsScriptList[i].myCardType == GoalCard.CardType.J)
+                            {
+                                if (MovesTracker.instance.goalCardsScriptList[i].myCardSubType == GoalCard.CardSubType.Spade)
+                                {
+                                    MovesTracker.instance.goalCardsScriptList[i].DeductCardGoalNumber();
+                                }
+                            }
+                        }
+
+                        break;
+                }
+                break;
+        }
+    }
 }

@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db0baa565e389994b86044c11f5c5f65, type: 3}
+  m_Name: Level 5
+  m_EditorClassIdentifier: 
+  numberOfGoalCard: 4
+  targetGoalForCard: 03000000060000000600000006000000
+  targetCards: 00000000010000000000000001000000
+  targetSubCards: 01000000030000000000000001000000
+  spawnableItems: []
+  numberOfCardsToSpawn: 21
+  heartCards:
+  - {fileID: 7192011985580974127, guid: 0b465bc30d752af4faadaac6a9bcbd66, type: 3}
+  - {fileID: 7192011985580974127, guid: cd30655823d5ab6488a415456ae8dc1f, type: 3}
+  - {fileID: 7192011985580974127, guid: 34282589f945b4b4880ac924a99c3a8b, type: 3}
+  diamondCards:
+  - {fileID: 6573055093808624710, guid: 001b57c624cc9434eb478f176660816f, type: 3}
+  - {fileID: 6573055093808624710, guid: 7964f459ef5182243b9efff2368c4a92, type: 3}
+  - {fileID: 6573055093808624710, guid: ceeb898e614ece840b8875f82de862b0, type: 3}
+  spadeCards:
+  - {fileID: 7244914326266317435, guid: 2161a7b4862785947bef486d54b4c49f, type: 3}
+  - {fileID: 7244914326266317435, guid: fd5f7c41bf9bf704f83707aee28a1d24, type: 3}
+  - {fileID: 7244914326266317435, guid: a850dbb0bd6f0d04697ec0f8b43045fe, type: 3}
+  clubCards:
+  - {fileID: 5983585857884203352, guid: f86c4e288d95f6943bb5ef5187abfbbd, type: 3}
+  - {fileID: 5983585857884203352, guid: e15bfb3991acd884fbf0218394370e5b, type: 3}
+  - {fileID: 5983585857884203352, guid: 33398968092369d4890fb9d7f5c2793b, type: 3}

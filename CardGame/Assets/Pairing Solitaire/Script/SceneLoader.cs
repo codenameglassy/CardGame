@@ -7,13 +7,17 @@ public class SceneLoader : MonoBehaviour
 {
     
   
-    public void LoadScene(string name)
+    public void LoadSceneWithSfx(string name)
     {
         FindObjectOfType<AudioManagerCS>().Play("Card Touch");
         SceneManager.LoadScene(name);
     }
-   
 
-    
+    public void LoadScene(string name)
+    {
+        
+        SceneManager.LoadScene(name);
+    }
+
 
 }

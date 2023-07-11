@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using DG.Tweening;
 
 public class GameManager : MonoBehaviour
 {
@@ -17,15 +18,18 @@ public class GameManager : MonoBehaviour
     [HideInInspector]public Slot currentSlotToSpawn;
     
     public bool hasGameStarted = false;
+
+    public CanvasGroup fadeCanvas;
     private void Awake()
     {
         instance = this;
-      
+        fadeCanvas.alpha = 1.0f;
     }
     // Start is called before the first frame update
     void Start()
     {
-        DelayStartGame();
+        fadeCanvas.DOFade(0, 2f);
+       // DelayStartGame();
         if (selectedCardSlot != null)
             selectedCardSlot.GetComponent<SpriteRenderer>().color = Color.white;
     }
@@ -33,7 +37,6 @@ public class GameManager : MonoBehaviour
     private void Update()
     {
        
-
         if (Input.GetMouseButtonDown(0))
         {
             Vector3 mousePosition = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, -10));
@@ -59,8 +62,8 @@ public class GameManager : MonoBehaviour
                         }
                         hitSlot.GetlastCard();
                         Debug.Log(hitSlot.gameObject.name);
-                        selectedCard.GetComponent<SpriteRenderer>().color = Color.yellow;
-                        //selectedCard.selectedSprite.SetActive(true);
+                        //selectedCard.spriteRenderer.color = Color.yellow;
+                        selectedCard.selectedSprite.SetActive(true);
                         selectedCardSlot = hitSlot;
                         
                     }
@@ -69,8 +72,8 @@ public class GameManager : MonoBehaviour
                         Slot targetSlot = hit_.collider.GetComponent<Slot>();
                         selectedCard.MoveCard(selectedCardSlot, targetSlot);
                         FindObjectOfType<AudioManagerCS>().Play("Card Transfer");
-                        selectedCard.GetComponent<SpriteRenderer>().color = Color.white;
-                        //selectedCard.selectedSprite.SetActive(false);
+                        //selectedCard.spriteRenderer.color = Color.white;
+                        selectedCard.selectedSprite.SetActive(false);
 
                         //clear
                         selectedCard = null;
@@ -102,13 +105,25 @@ public class GameManager : MonoBehaviour
 
                 break;
             case 4:
-                currentSlotToSpawn = slotList[4];
+                currentSlotToSpawn = slotList[3];
                 slotIndex = 5;
                 break;
+
             case 5:
-                currentSlotToSpawn = slotList[3];
+                currentSlotToSpawn = slotList[4];
                 slotIndex = 1;
                 break;
+            /*
+            case 6:
+                currentSlotToSpawn = slotList[5];
+                slotIndex = 7;
+                break;
+
+            case 7:
+                currentSlotToSpawn = slotList[6];
+                slotIndex = 1;
+                break;
+            */
                 
            
         }
@@ -116,7 +131,7 @@ public class GameManager : MonoBehaviour
 
    public void GameStarter()
     {
-       hasGameStarted = true;
+        hasGameStarted = true;
         if (Settings.myGameMode == Settings.gamemode.versionTwo)
         {
             FaceUpAllCards();
